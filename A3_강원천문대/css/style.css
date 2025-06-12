@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+li{list-style: none;}
+a{color: inherit; text-decoration: none;}
+img{max-width: 100%; vertical-align: top;}
+:root{
+    --width_wrap : 1200px;
+    --main_color : #220066;
+    --sub_color : #4422cc;
+}
+
+body{
+    font-family: "맑은 고딕", sans-serif;
+}
+
+
+.wrap{
+    width: var(--width_wrap);
+    margin: 0 auto;
+    position: relative;
+}
+
+header{
+    width: 100%; height: 100px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+header .logo{
+    width: 200px; 
+}
+header .main{
+    display: flex;
+    text-align: center;
+}
+header .main>li>a{
+    padding: 10px;
+    width: 200px; display: block;
+    color: var(--main_color);
+}
+header .main>li:hover>a,
+header .main>li>a:focus,
+header .main>li.on>a{
+    background-color: var(--main_color);
+    color: white;
+}
+header .main .sub{
+    display: none;
+    position: absolute; z-index: 2;
+    top: 72.4px;
+}
+header .main .sub>li>a{
+    padding: 10px;
+    width: 200px; display: block;
+    color: var(--sub_color);
+    background-color: white;
+}
+header .main .sub>li:hover>a,
+header .main .sub>li>a:focus,
+header .main .sub>li.on>a{
+    background-color: var(--sub_color);
+    color: white;
+}
+/* header */
+
+.slide{
+    background-color: #eee;
+    width: 100%; height: 300px;
+    overflow: hidden;
+}
+.slide .slideWrap{
+    width: 100%; height: 100%;
+    position: relative;
+}
+.slide .slideWrap>div{
+    position: absolute; top: 0; left: 0; display: none;
+    width: 100%; height: 100%;
+}
+.slide .slideWrap>div a{ width: 100%; height: 100%; display: block;}
+.slide .slideWrap>div h1{color: white;}
+.slide .slideWrap .simg:nth-child(1){background: url(../img/img1.jpg) center/cover; display: block;}
+.slide .slideWrap .simg:nth-child(1) h1{
+    position: absolute; top: 50%; left: 60%;
+    transform: translate(0, -50%);
+}
+.slide .slideWrap .simg:nth-child(2){background: url(../img/img2.jpg) center/cover;}
+.slide .slideWrap .simg:nth-child(2) h1{
+    position: absolute; top: 50%; left: 10%;
+    transform: translate(0, -50%);
+}
+.slide .slideWrap .simg:nth-child(3){background: url(../img/img3.jpg) center/cover;}
+.slide .slideWrap .simg:nth-child(3) h1{
+    position: absolute; top: 50%; left: 70%;
+    transform: translate(0, -50%);
+}
+
+/* slide */
+
+
+.contents{
+    width: 100%; height: 200px;
+    display: flex;
+    
+}
+.contents>div{
+    width: calc(var(--width_wrap)/3); height: 100%;
+    
+}
+.contents .con1{padding: 10px 20px;}
+.contents .con1 .title{display: flex; margin-bottom: 15px;}
+.contents .con1 .title a{display: block; width: 100px; text-align: center; color: #888;}
+.contents .con1 .title .on{color: var(--main_color);}
+/* .contents .notice{display: none;} */
+.contents .notice a p{
+    padding: 5px 0;
+}
+.contents .notice a:hover{
+    color: var(--main_color);
+    text-decoration: underline;
+}
+.contents .notice .date{font-size: 14px; float: right;}
+.contents .gallery{display: none;}
+.contents .gallery.on{
+    display: flex; justify-content: space-between;
+}
+.contents .gallery img{width: 100px; height: 100px;}
+.contents .banner{background-color: #cfc;}
+.contents .shortcut{background-color: #ccf;}
+/* contents */
+
+footer{
+    width: 100%; height: 100px;
+    display: flex;
+    flex-wrap: wrap; align-items: center; 
+    font-size: 15px;
+    text-align: center;
+    background-color: #ccc;
+}
+footer .flogo{
+    width: 200px; height: 100px;
+    padding: 25px 0;
+}
+footer .flogo img{
+    filter: grayscale(100%);
+}
+footer .bottom_menu{
+    width: 1000px; height: 50px;
+    line-height: 50px;
+}
+footer .bottom_menu ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+footer .bottom_menu ul li:hover a{
+    color: var(--main_color);
+    text-decoration: underline;
+}
+
+footer .copyright{
+    width: 1000px; height: 50px;
+    line-height: 50px;
+}
+/* footer */
+
+.modal{
+    width: 500px; height: 300px;
+    position: absolute; z-index: 9999;
+    background-color: var(--main_color);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px 30px;
+    color: white;
+    box-shadow: 0 0 10px #000;
+    display: none;
+}
+.modal h2{text-align: center; margin-bottom: 30px;}
+.modal p{font-size: 14px;}
+.modal button{
+    cursor: pointer;
+    position: absolute; bottom: 50px; right: 30px;
+    width: 50px; height: 30px;
+}
+.modal button:hover{
+    
+    background-color: var(--sub_color);
+    color: white;
+}
