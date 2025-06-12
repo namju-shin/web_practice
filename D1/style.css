@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+li{list-style: none;}
+a{text-decoration: none; color: inherit; display: block;}
+img{object-fit: cover; vertical-align: top;}
+
+:root{
+    --main_color : hsl(120, 50%, 40%);
+    --sub_color : hsl(120, 50%, 20%);
+    --back_color : #ffffff;
+    --text_color : #333333;
+}
+
+body{background-color: var(--back_color); color: var(--text_color);}
+
+.wrap{width: 100%; height: calc(400px + 200px + 250px + 100px); display: flex; flex-wrap: wrap;}
+
+header{width: 200px; height: calc(400px + 200px + 250px); position: relative;}
+
+.logo{margin: 30px 10px;}
+.logo a img{width: 100%;}
+
+nav{margin: 30px 10px;}
+nav .main>li>a{color: var(--main_color); padding: 10px;}
+nav .main>li:hover>a, nav .main>li.on>a, nav .main>li>a:focus{color: #fff; background-color: var(--main_color);}
+nav .sub{display: none;}
+nav .sub>li>a{color: var(--sub_color); padding: 5px 20px;}
+nav .sub>li:hover>a, nav .sub>li.on>a, nav .sub>li>a:focus{color: #fff; background-color: var(--sub_color);}
+
+.spotMenu{width: 100%; position: absolute; bottom: 50px;}
+.spotMenu ul{display: flex; justify-content: center;}
+.spotMenu ul li a{display: inline-block;}
+.spotMenu ul li:first-child::after{content: ""; margin: 0 10px; width: 1px; height: 10px; background-color: #000; display: inline-block;}
+.spotMenu ul li a:hover, .spotMenu ul li a:focus{color: var(--main_color);}
+
+/* header */
+
+.sc{width: calc(100% - 200px); height: calc(400px + 200px + 250px);}
+
+.slide{width: 100%; height: 400px; overflow: hidden;}
+.slideWrap{width: 100%; height: 1200px;}
+.slideWrap>div{width: 100%; height: 400px; position: relative;}
+.simg1{background: url(./img/mick-de-paola-LUPJoR3OfEg-unsplash.jpg) center/cover;}
+.simg2{background: url(./img/dean-5yxJpt_TcAo-unsplash.jpg) center/cover;}
+.simg3{background: url(./img/sydney-rae-_-6iQvIunqA-unsplash.jpg) center/cover;}
+.slideWrap>div a{position: absolute; top: 80%; left: 50%; transform: translate(-50%, -50%);}
+.slideWrap>div a h1{color: #fff;}
+
+/* slide */
+
+.contents{width: 100%; height: calc(200px + 250px); padding: 0 30px;}
+
+.banner{display: flex; align-items: center; justify-content: space-between; height: 200px;}
+.banner img{width: 100px; height: 100px;}
+.banner .text h4{margin-bottom: 10px;}
+.banner svg{height: 80px;}
+.banner a:hover .st0, .banner a:focus .st0{stroke: var(--main_color);}
+
+.ng{height: 250px;}
+.ng .title ul{display: flex; gap: 30px; margin-bottom: 20px;}
+.ng .title .on{color: var(--main_color);}
+
+.notice{display: none;}
+.notice ul{height: 150px; display: flex; flex-direction: column; justify-content: space-between;}
+.notice ul li a{border-bottom: 1px solid;}
+.notice ul li a:hover, .notice ul li a:focus{color: var(--main_color);}
+.notice ul li a p{display: inline-block;}
+.notice ul li a .date{float: right; margin-right: 30px;}
+
+.gallery{display: none;}
+.gallery ul{display: flex; gap: 30px;}
+.gallery ul li{width: calc(100% / 3);}
+.gallery ul li a img{width: 100%; height: 150px;}
+
+.ng>div.on{display: block;}
+/* contents */
+
+.shortcut{position: absolute; right: 0; top: 0; background-color: #fff; text-align: center;}
+.shortcut li a{padding: 10px 30px;}
+.shortcut li a:hover, .shortcut li a:focus{color: #fff; background-color: var(--main_color);}
+.shortcut li a:hover img, .shortcut li a:focus img{filter: invert(1);}
+
+/* shortcut */
+
+footer{width: 100%; height: 100px; background-color: #ddd; display: flex; align-items: center; gap: 30px;}
+
+.flogo{width: 200px; padding: 10px;}
+.flogo img{width: 100%;}
+
+.copyright{width: calc(100% - 200px - 300px - 60px);}
+
+.sns{width: 300px; margin-right: 50px;}
+.sns ul{display: flex; gap: 20px; }
+.sns ul li a{width: 50px; height: 50px; background-color: #fff; padding: 10px; border-radius: 50%;}
+.sns ul li a img{width: 30px;}
+.sns ul li a:hover, .sns ul li a:focus{background-color: var(--main_color);}
+
+/* footer */
+
+
+.popup{
+    width: 600px; height: 350px; box-shadow: 0 0 10px #000; 
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 9999;
+    background-color: #fff; padding: 50px; display: none;
+}
+.popup h3{color: var(--main_color); margin-bottom: 20px;}
+.popup .close{padding: 10px 20px; position: absolute; right: 50px; bottom: 50px;}

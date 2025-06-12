@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+li{list-style: none;}
+a{color: inherit; text-decoration: none;}
+img{object-fit: cover; vertical-align: top;}
+
+
+:root{
+    --back_color : #fff;
+    --text_color : #333;
+    --main_color : hsla(50, 100%, 50%, 100%);
+    --sub_color : hsla(50, 100%, 30%, 100%);
+}
+
+body{
+    background-color: var(--back_color);
+    color: var(--text_color);
+}
+
+.wrap{
+    width: 100%; height: 650px;
+    display: flex; flex-direction: column; flex-wrap: wrap;
+}
+header{
+    width: 200px; height: 650px;
+    background-color:  hsla(50, 100%, 50%, 5%); text-align: center;
+}
+header .logo{height: 100px; padding: calc((100px - 70.4px)/2) 0; color: var(--main_color);}
+header .main a{display: block; padding: 5px 0;}
+header .main>li>a{color: var(--main_color);}
+header .main>li:hover>a,
+header .main>li.on>a,
+header .main>li>a:focus{
+    color: white; background-color: var(--main_color);
+}
+header .sub{display: none;}
+header .sub>li>a{color: var(--sub_color);}
+header .sub>li:hover>a,
+header .sub>li.on>a,
+header .sub>li>a:focus{
+    color: white; background-color: var(--sub_color);
+}
+/* header */
+
+.up{
+    width: calc(100% - 200px); height: 400px; display: flex;
+}
+
+.slide{
+    width: calc(100% - 230px); height: 400px;
+    overflow: hidden;
+}
+.slideWrap{width: 300%; height: 100%; display: flex;}
+.slideWrap>div{width: calc(100% / 3); height: 100%;}
+.slideWrap>div a{display: block; width: 100%; height: 100%; position: relative;}
+.slideWrap>div a h1{
+    color: white; background-color: rgba(0,0,0,0.5); 
+    text-align: center; padding: 20px; position: absolute; bottom: 0; width: 100%;
+}
+.slideWrap>div a h1 span{color: var(--main_color);}
+.slideWrap .simg1{background: url(./img/slider01.jpg) center/cover;}
+.slideWrap .simg2{background: url(./img/slider02.jpg) center/cover;}
+.slideWrap .simg3{background: url(./img/slider03.jpg) center/cover;}
+/* slide */
+
+.banner{
+    width: 230px; height: 400px;
+    background: url(./img/banner.jpg) center/cover; text-align: center;
+}
+.banner>div{
+    display: flex; flex-direction: column; gap: 20px; justify-content: center; align-items: center; 
+    width: 100%; height: 100%; transition: 0.6s;
+}
+.banner>div:hover{border: 10px solid var(--main_color);}
+.banner>div:hover .press{background-color: var(--main_color); color: white;}
+.banner>div h2{display: inline-block;}
+.banner>div .press{
+    background-color: #fff; color: var(--main_color); padding: 10px 15px; border-radius: 25px; width: 180px;
+}
+
+/* banner */
+.contents{
+    width: calc(100% - 200px); height: 250px;
+    background-color:  hsla(50, 100%, 50%, 20%);
+    display: flex;
+}
+.contents>div h3{height: 40px;}
+.contents>div h3 .plus{float: right;}
+.notice{width: 50%; height: 100%; padding: 30px;}
+.notice ul{width: 100%; height: calc(100% - 40px); display: flex; flex-direction: column; justify-content: space-between;}
+.notice ul li{border-bottom: 1px solid black;}
+.notice ul li a{display: inline-block; width: calc(100% - 110px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.notice ul li .date{float: right;}
+.notice ul li:hover{border-bottom-color: var(--sub_color); color: var(--sub_color);}
+.gallery{width: 50%; height: 100%; padding: 30px;}
+.gallery ul{display: flex; gap: 15px; width: 100%; height: calc(100% - 40px); text-align: center;}
+.gallery ul li a p{font-size: 15px; line-height: 15px; margin-top: 5px;}
+.gallery ul li img{display: block; height: calc(100% - 20px);}
+.gallery ul li:hover a p{color: var(--sub_color);}
+/* contents */
+
+footer{
+    width: 100%; height: 100px;
+    background-color: var(--sub_color);
+    display: flex; align-items: center; text-align: center;
+}
+footer .flogo{width: 200px;}
+footer .copyright{width: calc(100% - 200px - 230px); text-align: left;}
+footer .familysite{width: 230px;}
+footer .familysite select{padding: 5px;}
+/* footer */
+
+
+.modal_back{
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+.modal{
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 600px; height: 350px; background-color: #fff; padding: 50px 30px;
+}
+.modal h3{color: var(--main_color); margin-bottom: 20px;}
+.modal .close{padding: 5px; position: absolute; bottom: 50px; right: 30px;}
