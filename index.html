@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디 실기 연습</title>
+
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        .wrap{width: 1200px; margin: 0 auto; margin-top: 100px; text-align: center; }
+        .main{display: flex; gap: 50px; flex-wrap: wrap;}
+        li{list-style: none;}
+        .sub{border-top: 2px solid #000;}
+        .main>li{width: 300px;}
+        li{margin: 5px 0;}
+    </style>
+
+
+</head>
+<body>
+    <div class="wrap">
+        <ul class="main">
+            <li>
+                TYPE A
+                <ul class="sub">
+                    <li><a href="./A1/index.html">A1 JUST 쇼핑몰</a></li>
+                    <li><a href="./A2/index.html">A2 Green 재단</a></li>
+                    <li><a href="./A3_강원천문대/index.html">A3 강원천문대</a></li>
+                    <li><a href="./A4_유진건설/index.html">A4 유진건설</a></li>
+                </ul>
+            </li>
+            <li>
+                TYPE B
+                <ul class="sub">
+                    <li><a href="./B1_대한은행/index.html">B1 대한은행</a></li>
+                    <li><a href="./B2_대한투어/index.html">B2 대한투어</a></li>
+                    <li><a href="./B3_세계의미술작품/index.html">B3 세계의 미술작품</a></li>
+                    
+                </ul>
+            </li>
+            <li>
+                TYPE C
+                <ul class="sub">
+                    <li><a href="./C1_해운대 빛축제/index.html">C1 해운대 빛축제</a></li>
+                    <li><a href="./C4_Vallery Festival/index.html">C4 Vallery Festival</a></li>
+                </ul>
+            </li>
+            <li>
+                TYPE D
+                <ul class="sub">
+                    <li><a href="#"> </a></li>
+                    <li><a href="./D1/index.html">D1 골프</a></li>
+                    <li><a href="./D2_서울구석구석/index.html">D2 서울구석구석</a></li>
+                </ul>
+            </li>
+            <li>
+                TYPE E
+                <ul class="sub">
+                    <li><a href="./E1_김치이야기/index.html">E1 김치이야기</a></li>
+                    <li><a href="./E3_영상박물관/index.html">E3 영상박물관</a></li>
+                    <li><a href="./E4_철길마을/index.html">E4 철길마을</a></li>
+                    
+                </ul>
+            </li>
+            <li>
+                TYPE F
+                <ul class="sub">
+                    <li><a href="./F1_주식회사 기능건설/">F1 주식회사 기능건설</a></li>
+                    <li><a href="./F2_기능대학교/">F2 기능대학교</a></li>
+                    <li><a href="./F3_오픈뱅킹/">F3 오픈뱅킹</a></li>
+                    <li><a href="./F4_하이글로벌컴퍼니/">F4_하이글로벌컴퍼니</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+    <script>
+    document.querySelectorAll('a').forEach(function(link) {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer'); // 보안상 권장
+    });
+    </script>
+
+</html>
