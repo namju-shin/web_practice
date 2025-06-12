@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+/* common setting */
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+li{list-style: none;}
+a{color: inherit; text-decoration: none;}
+img{max-width: 100%; max-height: 100%; object-fit: cover; vertical-align: top;}
+
+:root{
+    --back_color : #ffffff;
+    --text_color : #333333;
+    --main_color : #ff8844;
+    --sub_color  : #ffbb44;
+    --width_wrap : 1200px;
+}
+
+body{
+    font-family: "맑은 고딕", sans-serif;
+    color: var(--text-color);
+    background-color: var(--back_color);
+}
+
+.wrap{width: var(--width_wrap); margin: 0 auto; position: relative;}
+
+
+/* indivisual setting */
+
+header{
+    width: 100%; height: 100px; margin-right: 20px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+header .logo{width: 200px; height: 40px;}
+header nav .main{display: flex; text-align: center;}
+header nav .main a{width: 150px; display: block;}
+header nav .main>li>a{height: 40px; line-height: 40px; color: var(--main_color);}
+header nav .main>li:hover>a,
+header nav .main>li.on>a,
+header nav .main>li>a:focus{
+    background-color: var(--main_color); color: white;
+}
+header nav .sub{position: absolute; z-index: 2; display: none;}
+header nav .sub>li>a{
+    height: 35px; line-height: 35px; background-color: var(--back_color); color: var(--sub_color);
+}
+header nav .sub>li:hover>a,
+header nav .sub>li.on>a,
+header nav .sub>li>a:focus{
+    background-color: var(--sub_color); color: white;
+}
+/* header */
+
+.slide{
+    width: 100%; height: 300px;
+    background-color: #aaa;
+    overflow: hidden;
+}
+.slideWrap{width: 100%; height: 300%;}
+.slideWrap>div a{width: var(--width_wrap); height: 300px; display: block; position: relative;} 
+.slideWrap>div a h1{
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white;
+}
+.slideWrap .s1{background: url(../../img/slide1.jpg) center/cover;}
+.slideWrap .s2{background: url(../../img/slide2.jpg) center/cover;}
+.slideWrap .s3{background: url(../../img/slide3.jpg) center/cover;}
+/* slide */
+
+.contents{
+    width: 100%; height: 200px;
+    display: flex; gap: 20px;
+}
+.contents>div{width: calc(var(--width_wrap)/3); height: 100%; padding: 20px 0;}
+.contents .notice h3,
+.contents .gallery h3{
+    color: var(--main_color); text-decoration: underline; margin-bottom: 15px; height: 25px;
+}
+.contents .notice ul{display: flex; flex-direction: column; height: 120px; justify-content: space-between;}
+.contents .notice ul li{font-size: 13px;}
+.contents .notice ul li a{
+    width: 300px; display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.contents .notice ul li a:hover{color: var(--main_color); text-decoration: underline;}
+.contents .notice ul li .date{float: right;}
+.contents .gallery ul{width: 100%; height: 120px; display: flex; justify-content: space-between;}
+.contents .gallery ul li a{width: 120px; height: 120px; display: block; overflow: hidden;}
+.contents .gallery ul li a img{width: 120px; height: 120px; transition: 0.6s; opacity: 50%;}
+.contents .gallery ul li a img:hover{opacity: 100%}
+.contents .banner{background: url(../../img/banner.jpg) center/cover;}
+.contents .banner a{width: 100%; height: 100%; display: block; text-align: center; position: relative;}
+.contents .banner a h3{
+    color: white; background-color: var(--main_color); 
+    padding: 10px; display: inline-block; border-radius: 10px; width: 320px;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+}
+.contents .banner a:hover h3{color: var(--main_color); background-color: white;}
+/* contents */
+
+footer{
+    width: 100%; height: 100px;
+    display: flex; justify-content: space-between; align-items: center; padding-right: 20px;
+    background-color: #eee;
+}
+footer .logo img{filter: grayscale(100%);} 
+footer .copyright{width: 65%;}
+footer .sns{display: flex; gap: 25px;}
+footer .sns .icon{width: 50px; height: 50px; background-color: var(--back_color); border-radius: 25px;}
+footer .sns .icon:hover{background-color: var(--main_color);}
+footer .sns .icon img{width: 60%; height: 60%; margin: 10px;}
+
+
+.popup{
+    width: 600px; height: 350px; 
+    background: linear-gradient(var(--main_color), var(--sub_color));
+    padding: 50px 30px;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    display: none;
+}
+.popup h3{text-align: center; color: white; margin-bottom: 30px;}
+.popup p{font-size: 13px; color: white;}
+.popup .close{position: absolute; bottom: 50px; right: 30px; padding: 5px;}
